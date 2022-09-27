@@ -144,6 +144,8 @@ Thus, in the Dockerfile, the Docker instruction you want to write will be:
 
 ## DOCKERFILE: PROJECT FILE CHANGES WITHOUT RE-BUILDS
 
+The order does make a difference
+
 In the order of what is placed in the Dockerfile, if there is a change detected at any stage then the proceeding code will re-run.
 
 
