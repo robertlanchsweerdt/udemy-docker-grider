@@ -144,6 +144,10 @@ Thus, in the Dockerfile, the Docker instruction you want to write will be:
 
 ## DOCKERFILE: PROJECT FILE CHANGES WITHOUT RE-BUILDS
 
+In the order of what is placed in the Dockerfile, if there is a change detected at any stage then the proceeding code will re-run.
+
+
+
 ## DOCKER FILE: TAGGING AN IMAGE
 
 `docker build -t <image tag>:latest .`
