@@ -149,7 +149,34 @@ The order does make a difference
 In the order of what is placed in the Dockerfile, if there is a change detected at any stage then the proceeding code will re-run.
 
 
-
 ## DOCKER FILE: TAGGING AN IMAGE
 
 `docker build -t <image tag>:latest .`
+
+## DOCKER COMPOSE
+
+allows running mulitple containers for a single application, and connect those containers using networking
+
+cleaner and easier than using the Docker CLI; saves time from having to write multiple Docker commands in the CLI
+
+when using `docker-compose.yml` to set-up multiple containers, Docker will automatically set-up networking for the containers to speak with each other
+
+`docker-compose up`:  the equivalent of the Docker CLI command `docker run <image name>`; except with this command you don't need the image name
+
+`docker-compose up --build`: the equivalent of running two Docker CLI commands... `docker build .` and `docker run <container id>`
+
+`docker-compose up -d`: to start up all containers in the background
+
+`docker-compose down`: to stop all containers
+
+## DOCKER CONTAINER CRASHES
+
+4 types of restart policies
+
+1. "no":  never attempt to restart this container if it stops or crashes; make sure to wrap "no" in quotations.
+
+2. always:  if this container stops for any reason, then always attempt to restart it; if running a web server or web application then would want it to always keep running.
+
+3. on-failure:  only restart if the containers stops with an error code; if running a worker process then you want it to stop when it finishes its job.
+
+4. unless-stopped:  always restart unless we (the developers) forcibly stop it
